@@ -1,7 +1,7 @@
 from flask import Flask
-
+import os 
 # print a nice greeting.
-def say_hello(username = "Xu Liu"):
+def say_hello(username="Xu Liu"):
     return '<p>Hello %s!</p>\n' % username
 
 # some bits of text for the page.
@@ -29,4 +29,6 @@ if __name__ == "__main__":
     # Setting debug to True enables debug output. This line should be
     # removed before deploying a production app.
     application.debug = True
-    application.run()
+
+    port = int(os.environ.get('PORT', 8080))  
+    application.run(host='0.0.0.0', port=port)  
