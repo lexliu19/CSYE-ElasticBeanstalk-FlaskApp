@@ -29,6 +29,4 @@ if __name__ == "__main__":
     # Setting debug to True enables debug output. This line should be
     # removed before deploying a production app.
     application.debug = True
-
-    port = int(os.environ.get('PORT', 8080))  
-    application.run(host='0.0.0.0', port=port)  
+    application.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
